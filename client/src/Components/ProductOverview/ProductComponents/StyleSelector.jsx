@@ -42,41 +42,8 @@ export default function StyleSelector({ productName, categoryName }) {
     getStyleFromProductId(productId);
   }, []);
 
-  useEffect(() => {
-    // rerender
-    reRender();
-  }, [currentStyle])
-
-  useEffect(() => {
-    // rerender
-    reRender();
-  }, [])
-
-  const reRender = () => {
-    <StylePhotoGrid>
-      {currentStyleArray.map((style, index) => {
-        if (currentIndex === index) {
-          return <StylePhoto
-            key={style.photos[0].url + index}
-            currentStyle={style}
-            setCurrentStyle={setCurrentStyle}
-            index={currentIndex}
-            setIndex={setCurrentIndex}
-            checkmarkStatus={true}
-          />
-        } else {
-          return <StylePhoto
-            key={style.photos[0].url + index}
-            currentStyle={style}
-            setCurrentStyle={setCurrentStyle}
-            index={currentIndex}
-            setIndex={setCurrentIndex}
-            checkmarkStatus={false}
-          />
-        }
-      })}
-    </StylePhotoGrid>
-  }
+  // useEffect(() => {
+  // }, [currentIndex]);
 
   return (
     <ProductDescriptionGrid id='productDescriptionGrid'>
@@ -98,7 +65,21 @@ export default function StyleSelector({ productName, categoryName }) {
             {currentStyle.name}
           </div>
         </PriceStyleContainer>
-        {reRender}
+        <StylePhotoGrid>
+          {currentStyleArray.map((style, index) => {
+            console.log(currentIndex);
+            console.log(index);
+            return <StylePhoto
+              key={style.photos[0].url + index}
+              currentStyle={style}
+              setCurrentStyle={setCurrentStyle}
+              index={index}
+              setIndex={setCurrentIndex}
+              currentIndex={currentIndex}
+            />
+            }
+          )}
+        </StylePhotoGrid>
         <SizeQtyContainer>
           {/* below component takes in current style, and need to access
           currentStyle.skus for the object that contain skus informaation */}
