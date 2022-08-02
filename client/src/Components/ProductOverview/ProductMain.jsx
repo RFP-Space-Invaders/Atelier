@@ -8,23 +8,25 @@ import StyleSelector from './ProductComponents/StyleSelector.jsx';
 import styled from 'styled-components';
 import { ProductOverviewGrid, ProductDescriptionGrid, ProductInformationGrid, VerticalLine, BulletPointDescription } from '../Styles/ProductOverview/productOverview.styled.js'
 import { AppContext } from '../../AppContext.jsx';
+import { IDContext } from '../../IDContext.jsx';
 
 export const ThemeContext = React.createContext({});
 
-export default function ProductMain({product_id}) {
+export default function ProductMain() {
   // const [productId, setProductId] = useState(40346);
   const [productDetails, setProductDetails] = useState({});
   const [productName, setProductName] = useState('Placeholder Name');
   const [categoryName, setCategoryName] = useState('CATEGORY');
   const [priceTag, setPriceTag] = useState('Placeholder Price');
-  const { setName } = useContext(AppContext);
+  const { setName} = useContext(AppContext);
+  const { product_id } = useContext(IDContext);
 
   const [isLoading, setIsLoading] = useState(true);
 
-  const getDataFromProductId = (productId) => {
+  const getDataFromProductId = (product_id) => {
     axios({
       method: 'get',
-      url: `/products/${productId}`,
+      url: `/products/${product_id}`,
     })
       .then((response) => {
         // console.log(response.data.name);
@@ -46,7 +48,7 @@ export default function ProductMain({product_id}) {
   useEffect(() => {
     console.log('productMain')
     getDataFromProductId(product_id);
-  }, []);
+  }, [product_id]);
 
   // useEffect(() => {
   //   setName(productName);

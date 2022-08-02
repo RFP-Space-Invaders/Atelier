@@ -5,7 +5,7 @@ import { ProductsContainerStyled } from '../Styles/RelatedProducts/related.style
 export default function ProductCarousel({products}) {
   return (
     <ProductsContainerStyled>
-      {products.map((product) => <ProductCard product={product}/>)}
+      {products.map((product, index) => <ProductCard key={index} product={product}/>)}
     </ProductsContainerStyled>
   );
 }

@@ -8,10 +8,11 @@ import Modal from './Modal/Modal.jsx';
 import { Question_AnswerStyled, SeeMoreQuestionStyled } from '../Styles/Q&A/container.styled';
 import { MoreQuestionBtnStyled } from '../Styles/Q&A/buttons.styled';
 import { AppContext } from '../../AppContext.jsx';
+import { IDContext } from '../../IDContext.jsx';
 
 const axios = require('axios');
 
-export default function QuestionListContainer({product_id}) {
+export default function QuestionListContainer() {
   const [questions, setQuestions] = useState([]);
   const [allQuestions, setAllQuestions] = useState([]);
   const [search, setSearch] = useState([]);
@@ -19,19 +20,20 @@ export default function QuestionListContainer({product_id}) {
   const [datalength, setDataLength] = useState(2);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { name } = useContext(AppContext);
+  const { product_id } = useContext(IDContext);
   const [helpulBtn, setHelpfulBtnClick] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   // const product_id = 40344; // --------product id need to standardize with all other components---
-
+  console.log('product_id current', product_id);
   function fetchData() {
     axios({
       method: 'get',
       url: `/qa/questions`,
       params: {
-        product_id: product_id,
+        product_id,
         page: 1,
-        count,
+        count: 1000,
       }
     })
       .then(({ data }) => {
@@ -49,7 +51,7 @@ export default function QuestionListContainer({product_id}) {
   useEffect(() => {
     console.log('questions')
     fetchData();
-  }, []);
+  }, [product_id]);
 
   useEffect(() => {
     console.log('questions_1')
@@ -125,10 +127,10 @@ export default function QuestionListContainer({product_id}) {
     setIsModalOpen(false);
   };
 
-  if(isLoading) {
-    return null;
-    <loadingQuestion></loadingQuestion>
-  }
+  // if(isLoading) {
+  //   return null;
+  //   <loadingQuestion></loadingQuestion>
+  // }
 
   return (
     <>

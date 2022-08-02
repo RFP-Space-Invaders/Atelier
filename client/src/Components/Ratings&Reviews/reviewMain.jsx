@@ -5,14 +5,16 @@ import ReviewList from './subcomponents/reviewslist.jsx';
 import RatingBreakdown from './subcomponents/ratingbreakdown.jsx';
 import { MainGridStyled, ReviewContainerStyled } from '../Styles/Reviews/bars.styled';
 import { AppContext } from '../../AppContext.jsx';
+import { IDContext } from '../../IDContext.jsx';
 
-function ReviewMain({ product_id }) {
+export default function ReviewMain() {
   const [reviews, setReviews] = useState([]);
   const [sortOption, setSortOption] = useState('relevant');
   const [count, setCount] = useState(2);
 
   const [overallRating, setOverallRating] = useState(0);
   const { setRatingAndCount } = useContext(AppContext);
+  const { product_id } = useContext(IDContext);
   const [ratings, setRatings] = useState({});
   const [recommended, setRecommended] = useState({});
   const [characteristics, setCharacteristics] = useState([]);
@@ -53,6 +55,7 @@ function ReviewMain({ product_id }) {
       },
     })
       .then(({ data }) => {
+        console.log('new product_id is ', product_id);
         const roundedRating = getAverageRating(data.ratings)[0];
         const reviewCount = getAverageRating(data.ratings)[1];
         ReactDOM.unstable_batchedUpdates(() => {
@@ -121,7 +124,7 @@ function ReviewMain({ product_id }) {
         // setDidMount(true);
       })
       .catch((err) => console.log(err));
-  }, [sortOption]);
+  }, [sortOption, product_id]);
 
   const selectHandler = (event) => {
     setSortOption(event.target.value);
@@ -187,6 +190,4 @@ function ReviewMain({ product_id }) {
       </MainGridStyled>
     </ReviewContainerStyled>
   );
-}
-
-export default memo(ReviewMain);
+};

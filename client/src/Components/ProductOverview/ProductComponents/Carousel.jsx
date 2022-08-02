@@ -78,7 +78,7 @@ function Carousel({ currentStyle, productId }) {
   const onModalCloseRequest = () => {
     setIsModalOpen(false);
   };
-
+console.log('currentstlye',currentStyle);
   return (
     <>
       { isModalOpen
@@ -114,7 +114,7 @@ function Carousel({ currentStyle, productId }) {
               <CarouselThumbnailImage
                 photo={photo} activePhotoIndex={activePhotoIndex}
                 handleClick={handleClick} index={index}
-                key={currentStyle.photos[index].url + index}
+                key={index}
                 index={index}
                 transform={transform}
                 expand={false}

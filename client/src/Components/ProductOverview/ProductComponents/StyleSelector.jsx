@@ -12,9 +12,9 @@ import { ProductDescriptionGrid } from '../../Styles/ProductOverview/productOver
 import { FaShoppingCart } from 'react-icons/fa';
 import StarRating from '../../Ratings&Reviews/subcomponents/stars.jsx';
 import { AppContext } from '../../../AppContext.jsx';
+import { IDContext } from '../../../IDContext.jsx';
 
-export default function StyleSelector({ productName, categoryName, priceTag, product_id }) {
-  const [productId, setProductId] = useState(product_id);
+export default function StyleSelector({ productName, categoryName, priceTag }) {
   const [currentStyleArray, setCurrentStyleArray] = useState([]);
   const [currentStyle, setCurrentStyle] = useState({ photos: [0], skus: {} });
   const [currentPrice, setCurrentPrice] = useState(priceTag);
@@ -24,8 +24,8 @@ export default function StyleSelector({ productName, categoryName, priceTag, pro
   const [cartArray, setCartArray] = useState([])
   const [totalItemCount, setTotalItemCount] = useState(0)
   const [refreshState, setRefreshState] = useState(false);
-  const context = useContext(AppContext);
-  const { ratingAndCount } = context;
+  const { ratingAndCount } = useContext(AppContext);
+  const {  product_id } = useContext(IDContext);
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -59,14 +59,14 @@ export default function StyleSelector({ productName, categoryName, priceTag, pro
     // productId is default to 40345 right now
     useEffect(() => {
       console.log('styleSelector_1')
-      getStyleFromProductId(productId);
-    }, []);
+      getStyleFromProductId(product_id);
+    }, [product_id]);
 
 
-  const getStyleFromProductId = (productId) => {
+  const getStyleFromProductId = (product_id) => {
     axios({
       method: 'get',
-      url:  `products/${productId}/styles`,
+      url:  `products/${product_id}/styles`,
     })
       .then((response) => {
         let current = response.data.results[0];
@@ -95,13 +95,13 @@ export default function StyleSelector({ productName, categoryName, priceTag, pro
     <ProductDescriptionGrid id='productDescriptionGrid'>
       {/* above grid has 2fr 1fr, and I want Carousel to take up 2
       Carousel has too many style therefore has a seperate styling file */}
-      <Carousel currentStyle={currentStyle} productId={productId} />
+      <Carousel currentStyle={currentStyle} productId={product_id} />
       {/* StyleSelectorLayout will take the other 1fr */}
       <StyleSelectorLayout id='styleSelectorLayout'>
         <RatingCartGrid>
           <RatingContainer>
             <a href="#review" style={{textDecoration: 'none'}}>
-              <StarRating review_id={productId + 'starOverview'} rating={ratingAndCount[0]} />
+              <StarRating review_id={product_id + 'starOverview'} rating={ratingAndCount[0]} />
               &nbsp;
               &nbsp;
               <span style={{color: 'black'}}>{ratingAndCount[1]} Reviews</span>

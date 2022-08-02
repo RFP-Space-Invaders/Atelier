@@ -1,17 +1,22 @@
-import React from 'react';
-import {CardContainer, ImageStyled, ProductInfoStyled} from '../Styles/RelatedProducts/related.styled.js';
-import {AppContext} from '../../AppContext.jsx';
+import React, {useContext} from 'react';
+import {CardContainerStyled, ImageStyled, ProductInfoStyled, PStyled} from '../Styles/RelatedProducts/related.styled.js';
+import {IDContext} from '../../IDContext.jsx';
+
 
 export default function ProductCard({product}) {
-  const { setProductID } = useContext(AppContext);
+  const { changeProductId } = useContext(IDContext);
   return (
-    <CardContainerStyled onClick={() => setProductID(product.id)}>
-      <ImageStyled src={product.photo_url}/>
-      <ProductInfoStyled>
-        <p>{product.category}</p>
-        <p>{product.description}</p>
-        <p>{product.default_price}</p>
-      </ProductInfoStyled>
-    </CardContainerStyled>
+    <>
+     { product === undefined ? null :
+      <CardContainerStyled onClick={() => {changeProductId(product.id)}}>
+        <ImageStyled src={product.photo_url}/>
+        <ProductInfoStyled>
+
+          <PStyled>{product.category}</PStyled><br/>
+          <PStyled>{product.description.slice(0, 30) + '...'}</PStyled><br/>
+          <PStyled>{product.default_price}</PStyled><br/>
+        </ProductInfoStyled>
+      </CardContainerStyled>}
+    </>
   );
 }
