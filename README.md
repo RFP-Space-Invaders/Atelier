@@ -6,7 +6,7 @@
 
 ![Gameplay](https://i.imgur.com/zKfnLUM.gif)
 
-A React e-commerce application
+A responsive web and mobile-friendly React e-commerce application that interacts with an API.
 
 <!-- MORE about what problems we solved here!!!! -->
 
@@ -54,29 +54,20 @@ A React e-commerce application
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Screenshots
+### Components
 
-<details>
-  <summary> Product Overview </summary>
-  <img src="https://i.imgur.com/04x1fgr.gif" alt="Logo">
-</details>
+## Components
+### Product Detail
+>A general information relating to the product general and expanded carousel view of product images style selector add to cart and favorite item item rating and link to review section.
+<img src="./gifs/product.gif" alt="" width=80% height=auto>
 
-<details>
-  <summary> Q&A </summary>
-  <img src="https://i.imgur.com/zJwSFa3.gif" alt="Logo">
-</details>
+### Questions and Answers
+>A dynamic list of questions and answers upload images through Cloudinary add questions/answers report questions/answers.
 
-<details>
-  <summary> Reviews and Ratings </summary>
-  <img src="https://i.imgur.com/zJwSFa3.gif" alt="Logo">
-</details>
 
-### Contribution
-  * ### Q&A by Kesang D.
+### Rating and Reviews
+>A dynamic list of current ratings and reviews along with characteristic ratings. The section also features a rating breakdown and the ability to add additional reviews.
 
-  * ### Product Overview by River X.
-
-  * ### Reviews and Ratings by Royce C.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
