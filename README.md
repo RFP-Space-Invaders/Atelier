@@ -52,21 +52,21 @@ A responsive web and mobile-friendly React e-commerce application that interacts
 ## Components
 ### Product Detail
 >A general information relating to the product general and expanded carousel view of product images style selector add to cart and favorite item item rating and link to review section.
-![Imgur](https://i.imgur.com/rwAGDP0.gifv)
+![Imgur](https://i.imgur.com/rwAGDP0.gif)
 <!-- <div align="center">
     <img src="https://i.imgur.com/rwAGDP0.gif" alt="Logo">
 </div> -->
 
 ### Questions and Answers
 >A dynamic list of questions and answers upload images through Cloudinary add questions/answers report questions/answers.
-![Imgur](https://i.imgur.com/TS1EV4j.gifv)
+![Imgur](https://i.imgur.com/TS1EV4j.gif)
 <!-- <div align="center">
     <img src="https://i.imgur.com/TS1EV4j.gif" alt="Logo">
 </div> -->
 
 ### Rating and Reviews
 >A dynamic list of current ratings and reviews along with characteristic ratings. The section also features a rating breakdown and the ability to add additional reviews.
-![Imgur](https://i.imgur.com/yCdVYke.gifv)
+![Imgur](https://i.imgur.com/yCdVYke.gif)
 <!-- <div align="center">
     <img src="https://i.imgur.com/yCdVYke.gif" alt="Logo">
 </div> -->
