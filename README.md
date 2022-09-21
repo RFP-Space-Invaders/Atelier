@@ -4,9 +4,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Gameplay](https://i.imgur.com/zKfnLUM.gif)
-
-A React e-commerce application
+A responsive web and mobile-friendly React e-commerce application that interacts with an API.
 
 <!-- MORE about what problems we solved here!!!! -->
 
@@ -26,9 +24,7 @@ A React e-commerce application
 * ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 * ![Jest](https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white)
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -37,7 +33,7 @@ A React e-commerce application
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/ph-castle/apples2oranges.git
+   git clone https://github.com/SpaceDesigns/Atelier.git
    ```
 2. Install NPM packages
    ```sh
@@ -54,29 +50,16 @@ A React e-commerce application
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Screenshots
+## Components
+### Product Detail
+>A general information relating to the product general and expanded carousel view of product images style selector add to cart and favorite item item rating and link to review section.
+<!-- <img src="./gifs/product.gif" alt="" width=80% height=auto> -->
 
-<details>
-  <summary> Product Overview </summary>
-  <img src="https://i.imgur.com/04x1fgr.gif" alt="Logo">
-</details>
+### Questions and Answers
+>A dynamic list of questions and answers upload images through Cloudinary add questions/answers report questions/answers.
 
-<details>
-  <summary> Q&A </summary>
-  <img src="https://i.imgur.com/zJwSFa3.gif" alt="Logo">
-</details>
-
-<details>
-  <summary> Reviews and Ratings </summary>
-  <img src="https://i.imgur.com/zJwSFa3.gif" alt="Logo">
-</details>
-
-### Contribution
-  * ### Q&A by Kesang D.
-
-  * ### Product Overview by River X.
-
-  * ### Reviews and Ratings by Royce C.
+### Rating and Reviews
+>A dynamic list of current ratings and reviews along with characteristic ratings. The section also features a rating breakdown and the ability to add additional reviews.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
