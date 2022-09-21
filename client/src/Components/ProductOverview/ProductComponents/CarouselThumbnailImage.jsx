@@ -33,5 +33,4 @@ function CarouselThumbnailImage({
 }
 
 export default CarouselThumbnailImage;
-// alt="photo" width="100px" height="100px" loading="lazy"
-// alt="photo" width="100px" height="100px" loading="lazy"
+

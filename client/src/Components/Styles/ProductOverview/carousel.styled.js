@@ -107,12 +107,6 @@ export const CarouselButtonRight = styled.button`
   cursor: pointer;
 `;
 
-// export const ExpandedView = styled.div`
-
-// `;
-
-// -------------------->
-
 export const ExpandedCarouselThumbnailContainer = styled.div`
   position: absolute;
   background: rgba(255, 255, 255, 0.7);
@@ -193,43 +187,3 @@ opacity: 1;
 object-fit: ${(props) => props['object-fit'] || 'null'};
 overflow: auto;
 `;
-// // -------------------------------------------
-
-// export const CarouselThumbnailContainer = styled.div`
-//   position: absolute;
-//   overflow-y: auto;
-//   overflow-x: hidden;
-//   height: 32rem;
-//   width: 100px;
-//   scroll-snap-type: x promximity;
-//   scroll-behavior: smooth;
-//   z-index: 11;
-// `;
-
-// export const CarouselThumbnailGrid = styled.ol`
-
-// li {
-//   list-style: none;
-//   width:  80px;
-//   flex-shrink: 0;
-// }
-// li > *, li :is(picture, figure, img) {
-//   width: 100%;
-// }
-// li:first-of-type {
-//   scroll-snap-align: start;
-// }
-// li:last-of-type {
-//   scroll-snap-align: end;
-// }
-// `;
-
-// export const ThumbnailImage = styled.img`
-//   padding: 2px;
-//   display: block;
-//   height: 100px;
-//   border: 1px solid grey;
-//   border-radius: 5%;
-//   transform: translate(-80%, 0);
-
-// `;

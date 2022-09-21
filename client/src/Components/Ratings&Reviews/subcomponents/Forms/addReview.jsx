@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import { Form } from '../../../Styles/Q&A/form.styled.js'
 import CloudinaryUploadWidget from '../../../../Assets/cloudinaryUploadWidget.jsx';
 import FormStarButton from './formstarbutton.jsx';
 import CharacteristicForm from './characteristicForm.jsx';
@@ -23,7 +22,6 @@ export default function AddReview({ characteristics, product_id }) {
   const [characteristicsObj, setCharacteristicsObj] = useState({});
 
   useEffect(() => {
-    console.log('addReview')
     setValues({
       ...values,
       characteristics: characteristicsObj,
@@ -31,7 +29,6 @@ export default function AddReview({ characteristics, product_id }) {
   }, [characteristicsObj]);
 
   useEffect(() => {
-    console.log('addReviewForm1')
     setValues({
       ...values,
       product_id,
@@ -44,7 +41,6 @@ export default function AddReview({ characteristics, product_id }) {
       ...values,
       [name]: value,
     });
-    // console.log(name, e.target.value);
   };
 
   const handleRecommended = (e) => {
@@ -53,12 +49,10 @@ export default function AddReview({ characteristics, product_id }) {
       ...values,
       [name]: Boolean(value),
     });
-    // console.log(name, e.target.value);
   };
 
 
   const handleRatingChange = (name) => (rating) => {
-    // console.log(e.target[name], e.target.value);
     setValues({
       ...values,
       [name]: Number(rating),
@@ -67,8 +61,7 @@ export default function AddReview({ characteristics, product_id }) {
 
   const handleCharChange = (e) => {
     const { name, value } = e.target;
-    // console.log('name: ', name, 'value: ', value);
-    // console.log(values);
+
     if (name) {
       setCharacteristicsObj({
         ...characteristicsObj,
@@ -88,10 +81,6 @@ export default function AddReview({ characteristics, product_id }) {
     axios.post('/reviews/addreview', data)
       .then((response) => console.log(response))
       .catch((err) => console.log(err));
-  }
-
-  const handleFocus = (e) => {
-
   }
 
   const characteristicReview = characteristics.map((value) => (
@@ -132,7 +121,6 @@ export default function AddReview({ characteristics, product_id }) {
       <CloudinaryUploadWidget imageUpload={imageUpload} />
       <div>
         <input type="submit" value="Submit Review" />
-        {/* <input type="button" value="close" onClick={() => setAddStatus(false)} /> */}
       </div>
     </form>
   );

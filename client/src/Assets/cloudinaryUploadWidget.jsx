@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
 
 export default function CloudinaryUploadWidget({ imageUpload }) {
-  // eslint-disable-next-line no-var
   var myWidget;
 
   useEffect(() => {
-    // eslint-disable-next-line no-var
     myWidget = window.cloudinary.createUploadWidget(
       {
         cloudName: 'space-invaders',

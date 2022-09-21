@@ -1,7 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable react/prop-types */
-/* eslint-disable import/extensions */
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import AnswerList from './answerList.jsx';
@@ -23,8 +19,6 @@ import {
 const axios = require('axios');
 
 export default function QuestionList({ question, helpfulness, reportQ, seeMoreQuestion, helpfulClick} ) {
-  // answers only first  two
-  // get answers --> sort by helpfulness
   const [allAnswers, setAllAnswers] = useState([]);
   const [answers, setAnswers] = useState([]);
   const [count, setCount] = useState(2);
@@ -35,14 +29,11 @@ export default function QuestionList({ question, helpfulness, reportQ, seeMoreQu
   const [helpfulClicked, setHelpfulClick] = useState(false);
   const [helpfulDataA, setHelpfulDataA] = useState(false);
 
-  console.log(question);
   useEffect(() => {
 
     if (count > 2) {
-      console.log('questionList_1')
       setAnswers(allAnswers.slice(0, count));
     } else {
-      console.log('questionList')
       axios({
         method: 'get',
         url: `/qa/questions/${question.question_id}/answers`,
@@ -62,13 +53,6 @@ export default function QuestionList({ question, helpfulness, reportQ, seeMoreQu
     }
   }, [count, helpfulDataA, reportA, isModalOpen]);
 
-  // useEffect(() => {
-
-
-  // }, [count]);
-
-
-  // ----------setter functions being passed to child component-------------------------------------
   const fetchHelpfulData = (answer_id) => {
     axios({
       method: 'put',
@@ -98,7 +82,6 @@ export default function QuestionList({ question, helpfulness, reportQ, seeMoreQu
   const onModalCloseRequest = () => {
     setIsModalOpen(false);
   };
-
 
   const onFormValidation = (data, questionId) => {
     axios({
@@ -151,7 +134,6 @@ export default function QuestionList({ question, helpfulness, reportQ, seeMoreQu
         <AnswerContainerStyled>
           <AStyled>A: </AStyled>
           <AnswerContainer_Styled>
-          {/* <AnswerStyled> */}
             { status === true
               ? (
                 <>
@@ -166,8 +148,7 @@ export default function QuestionList({ question, helpfulness, reportQ, seeMoreQu
               : <>{ answers.map((answer, index) => <AnswerList key={index} helpfulness={fetchHelpfulData} report={report} answer={answer} />)}</>}
 
          </AnswerContainer_Styled>
-
-          {/* </AnswerStyled> */}
+         
           {(!status && answersLength > 2) ? < SeeMoreBtnStyled type="button" onClick={() => moreQuestions()}>SEE MORE ANSWERS</ SeeMoreBtnStyled> : null}
         </AnswerContainerStyled>
       </QuestionListItemStyled>

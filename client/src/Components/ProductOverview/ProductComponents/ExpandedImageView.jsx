@@ -23,9 +23,7 @@ export default function ExpandedImageView({
   const magnifierHeight = 300;
   const magnifieWidth = 300;
   const zoomLevel = 2.5;
-  // console.log('image url is: ', image);
 
-  // console.log('this is magnifying status:', showMagnifier);
   return (
     <>
       {leftButtonStatus
@@ -61,7 +59,6 @@ export default function ExpandedImageView({
                 const elem = e.currentTarget;
                 const { width, height } = elem.getBoundingClientRect();
                 setSize([width, height]);
-                // console.log(width, height);
               }}
               onMouseMove={(e) => {
               // update cursor position
@@ -101,7 +98,6 @@ export default function ExpandedImageView({
                 const { width, height } = elem.getBoundingClientRect();
                 setSize([width, height]);
                 setShowMagnifier(true);
-                // console.log(width, height);
               }}
               onMouseMove={(e) => {
               // update cursor position
@@ -119,7 +115,7 @@ export default function ExpandedImageView({
           </div>
         )}
 
-      {/* below is the div for the magnifier glass. after working, need to move it to styled files */}
+      {/* below is the div for the magnifier glass.*/}
 
           <div
             style={{

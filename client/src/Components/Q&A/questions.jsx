@@ -24,8 +24,6 @@ export default function QuestionListContainer() {
   const [helpulBtn, setHelpfulBtnClick] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  // const product_id = 40344; // --------product id need to standardize with all other components---
-  console.log('product_id current', product_id);
   function fetchData() {
     axios({
       method: 'get',
@@ -37,7 +35,6 @@ export default function QuestionListContainer() {
       }
     })
       .then(({ data }) => {
-        console.log(data);
         ReactDOM.unstable_batchedUpdates(() => {
           setQuestions(data.results.slice(0, count));
           setDataLength(data.results.length);
@@ -49,17 +46,14 @@ export default function QuestionListContainer() {
   }
 
   useEffect(() => {
-    console.log('questions')
     fetchData();
   }, [product_id]);
 
   useEffect(() => {
-    console.log('questions_1')
     setQuestions(allQuestions.slice(0, count));
   }, [count]);
 
   useEffect(() => {
-    console.log('question_2')
     setQuestions(search);
   }, [search]);
 
@@ -118,7 +112,7 @@ export default function QuestionListContainer() {
     setIsModalOpen(false);
   };
 
-  // need to validate form and then send to api
+  // validate form and then send to api
   const onFormValidation = (data) => {
     const questionData = {...data, product_id}
     axios.post(`/questions/questions/`, questionData)
@@ -126,11 +120,6 @@ export default function QuestionListContainer() {
       .catch((error) => console.log('failed to post question', error));
     setIsModalOpen(false);
   };
-
-  // if(isLoading) {
-  //   return null;
-  //   <loadingQuestion></loadingQuestion>
-  // }
 
   return (
     <>

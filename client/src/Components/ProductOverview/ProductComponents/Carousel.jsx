@@ -20,7 +20,6 @@ import {
 } from '../../Styles/ProductOverview/carousel.styled.js';
 
 // currentStyle is an object contains all info about this style
-//
 function Carousel({ currentStyle, productId }) {
   const [currentStylePhotos, setCurrentStylePhotos] = useState(currentStyle.photos);
   const [activePhotoIndex, SetActivePhotoIndex] = useState(0);
@@ -35,17 +34,14 @@ function Carousel({ currentStyle, productId }) {
 
   // when productId change, default image change back to first img
   useEffect(() => {
-    console.log('Carousel')
     SetActivePhotoIndex(0);
   }, [productId]);
 
   useEffect(() => {
-    console.log('Carousel_1')
     setCurrentStylePhotos(currentStyle.photos);
   }, [currentStyle]);
 
   useEffect(() => {
-    console.log('Carousel_2')
     if (activePhotoIndex === 0) {
       setLeftButtonStatus(false);
     } else if (activePhotoIndex !== 0) {
@@ -59,8 +55,8 @@ function Carousel({ currentStyle, productId }) {
   if (numPhotos <= activePhotoIndex) {
     SetActivePhotoIndex(0);
   }
-  // conditionally display left/right buttons
 
+  // conditionally display left/right buttons
   const handleClick = (activePhotoIndex) => {
     if (activePhotoIndex === (numPhotos - 1)) {
       setRightButtonStatus(false);
@@ -78,7 +74,7 @@ function Carousel({ currentStyle, productId }) {
   const onModalCloseRequest = () => {
     setIsModalOpen(false);
   };
-console.log('currentstlye',currentStyle);
+
   return (
     <>
       { isModalOpen

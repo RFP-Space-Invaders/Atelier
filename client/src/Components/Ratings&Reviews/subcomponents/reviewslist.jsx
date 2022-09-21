@@ -12,10 +12,6 @@ export default function ReviewsList({ reviews, loadMoreReviews, characteristics,
     setIsModalOpen(false);
   };
 
-  // const formValidator = () => {
-
-  // };
-
   return (
     <ReviewListContainerStyled>
       <SortView selectHandler={selectHandler} reviewCount={reviewCount} />

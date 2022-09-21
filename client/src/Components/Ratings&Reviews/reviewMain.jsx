@@ -40,13 +40,7 @@ export default function ReviewMain() {
     return [rounded, numRatings];
   };
 
-  // useEffect(() => {
-  //   setRating(overallRating);
-  //   setCountRatings(numReviews);
-  // }, [overallRating, numReviews]);
-
   useEffect(() => {
-    console.log('Review Main')
     axios({
       method: 'get',
       url: `/reviews/meta`,
@@ -55,7 +49,6 @@ export default function ReviewMain() {
       },
     })
       .then(({ data }) => {
-        console.log('new product_id is ', product_id);
         const roundedRating = getAverageRating(data.ratings)[0];
         const reviewCount = getAverageRating(data.ratings)[1];
         ReactDOM.unstable_batchedUpdates(() => {
@@ -121,7 +114,6 @@ export default function ReviewMain() {
           setReviews(data.results);
           setIsLoading(false);
         });
-        // setDidMount(true);
       })
       .catch((err) => console.log(err));
   }, [sortOption, product_id]);

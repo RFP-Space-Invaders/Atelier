@@ -80,5 +80,3 @@ export const CloseButtonExpandedStyled = styled.button`
 export const ModalContentStyled = styled.div`
   padding: 2px;
 `;
-// top: ${props => props.theme.spacing.small};
-// right: ${props => props.theme.spacing.small};

@@ -9,7 +9,6 @@ export default function RelatedProducts() {
 
   useEffect(() => {
     getProducts();
-    console.log('here is related prods')
   }, [product_id])
 
   const getProducts = () => {
@@ -19,11 +18,9 @@ export default function RelatedProducts() {
     })
       .then((response) => {
         let data = response.data;
-        console.log(data);
         return Promise.all(data.map((product) => {
           return axios.get(`/products/${product}`)
             .then((response) => {
-              console.log(response.data);
               return {
                 category: response.data.category,
                 description: response.data.description,
@@ -40,16 +37,12 @@ export default function RelatedProducts() {
                 })
                 .catch((err) => console.log(err));
 
-
-
-
               return productDescriptionObj;
             })
             .catch((err) => console.log(err))
         }))
       })
       .then((ProductData) => {
-        console.log(ProductData)
         setProducts(ProductData);
       })
       .catch((err) => console.log(err));

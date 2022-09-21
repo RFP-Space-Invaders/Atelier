@@ -5,7 +5,6 @@ export default function FormStarButton({ onChange }) {
   const [rating, setRating] = useState(1);
 
   useEffect(() => {
-    console.log('formstarbutton')
     onChange(rating);
   }, [rating]);
 

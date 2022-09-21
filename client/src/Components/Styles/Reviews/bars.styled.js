@@ -5,12 +5,6 @@ export const ReviewContainerStyled = styled.div`
   justify-content: center;
   margin: 0 auto;
   max-width: 85vw
-  // @media (min-width: 768px) {
-  //   // max-width: 600px;
-  //   // margin-right: 100px;
-  // }
-  // @media (max-width: 375px) {
-  // }
 `;
 
 export const ReviewListContainerStyled = styled.div`
@@ -22,17 +16,6 @@ export const ReviewListContainerStyled = styled.div`
 `;
 
 export const ReviewListButtonStyled = styled.button`
-  // padding: 0;
-  // border: 4px black;
-  // background: none;
-  // text-decoration: underline;
-  // cursor: pointer;
-  // font-size: 15px;
-  // margin-left: 15px;
-  // margin-right: 15px;
-
-  // padding-left: 1.5rem;
-  // padding-right: 1.5rem;
   font-family: 'Oswald', sans-serif;
   font-weight: 200;
   height: 30px;
@@ -136,8 +119,7 @@ export const MainGridStyled = styled.div`
   display: grid;
   width: 100%;
   margin-bottom: 130px;
-  // margin-left: 50px;
-  // margin-right: 30px;
+
   @media (min-width: 501px) {
     grid-template-columns: 40% 60%;
     grid-gap: 50px;
@@ -152,8 +134,7 @@ export const RatingBreakdownStyled = styled.div`
   flex-direction: column;
   align-content: center;
   max-width: 100%;
-  // @media (min-width: 768px) {
-  // }
+
   @media (max-width: 400px) {
     margin-left: 20px;
   }
@@ -222,12 +203,6 @@ export const ReviewListStyled = styled.div`
   overflow-x: hidden;
   word-wrap: break-word;
   max-height: 500px;
-  // @media (max-width: 375px) {
-  //   width: 400px;
-  // }
-  // @media (max-width: 400px) {
-  //   margin-left: 30px;
-  // }
 `;
 
 export const ReviewStyled = styled.div`
@@ -287,7 +262,6 @@ export const SortBarStyled = styled.div`
 `;
 
 export const SelectStyled = styled.select`
-  // padding-left: 3px;
   border-color: transparent;
   display: flex;
   min-height: 38px;

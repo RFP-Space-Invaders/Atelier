@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 // this style file is only for ProductOverview
-//
 
 // biggest RED grid that contains all child of ProductOverview
 export const ProductOverviewGrid = styled.div`
@@ -42,7 +41,6 @@ export const ProductInformationGrid = styled.div`
   gap: 2%;
 `;
 
-
 export const VerticalLine = styled.div`
   grid-column-start: auto;
   grid-column-end: auto;
@@ -53,7 +51,7 @@ export const VerticalLine = styled.div`
   border-left: 1px solid black;
   min-height: 100px;
   max-height: 150px;
-`
+`;
 // bottom right ORANGE container that contains bullet point product description
 export const BulletPointDescription = styled.div`
   font-family: 'Oswald', sans-serif;

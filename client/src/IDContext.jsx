@@ -10,9 +10,5 @@ export default function IDContextProvider({children}) {
       setRefresh(prevCount => prevCount + 1);
     };
 
-  // useEffect(() => {
-  //   console.log(product_id)
-  // }, [product_id]);
-
   return <IDContext.Provider value={{product_id, changeProductId}}>{children}</IDContext.Provider>;
 }

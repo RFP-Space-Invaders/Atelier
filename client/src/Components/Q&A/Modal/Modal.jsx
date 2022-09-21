@@ -87,7 +87,6 @@ export default function Modal({
 
             <ExpandedCarouselThumbnailContainer>
               <ExpandedCarouselThumbnailGrid id="ExpandedcarouselThumbnailGrid">
-                {/* here each photo is an object that contain url and thumbnail_url */}
                 {currentStylePhotos.map((photo, index) => (
                   <CarouselThumbnailImage
                     photo={photo}

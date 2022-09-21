@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable camelcase */
 import styled from 'styled-components';
 
 export const Question_AnswerStyled = styled.ul`
@@ -30,9 +28,6 @@ export const QuestionListItemStyled = styled.li`
   margin-bottom: 10px;
   list-style: none;
   border-bottom: 1px dashed;
-
-
-}
 `;
 
 export const SpanStyled = styled.span`

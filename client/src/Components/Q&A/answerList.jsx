@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import React from 'react';
 import Photo from '../../Assets/photo.jsx';
 import { ButtonStyled, ButtonContainerAnsStyled } from '../Styles/Q&A/buttons.styled';

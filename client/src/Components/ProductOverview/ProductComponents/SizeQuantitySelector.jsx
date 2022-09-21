@@ -4,13 +4,9 @@ import { SizeQtyContainer, SizeQtyStyle, AddToCartFavoriteContainer, AddToCartBu
 import { FaAngleDown, FaRegHeart, FaHeart } from 'react-icons/fa';
 
 export default function SizeQuantitySelector({ currentStyleSkus, refreshState, setRefreshState }) {
-  // quantity and size information are inside currentStyleSkus, which is an object, NOT an array
-  // different skus means different size
-  // If there is no remaining stock for the current style, the dropdown should become inactive and read “OUT OF STOCK”.
   const [selectedSku, setSelectedSku] = useState(currentStyleSkus[0]);
   const outOfStockStatus = currentStyleSkus.length === 0 ? true : false;
   const currentStyleSkusArray = Object.entries(currentStyleSkus)
-  // currentStyleArray example: [[1394805, {quanitity: 8, size: 'XS'}],[1394806, {quanitity: 16, size: 'S'}]]
   const [favoriteStatus, setFavoriteStatus] = useState(false);
   const [selectedQty, setSelectedQty] = useState('-');
   const [sizeSeletedStatus, setSizeSelectedStatus] = useState(false);
@@ -21,7 +17,6 @@ export default function SizeQuantitySelector({ currentStyleSkus, refreshState, s
 
 
   useEffect(() => {
-    console.log('add to cart');
     const currentStyleSkusArray = Object.entries(currentStyleSkus);
     setSizeSelectedStatus(false);
     setSizeSelectedStatus(false);
@@ -73,7 +68,6 @@ export default function SizeQuantitySelector({ currentStyleSkus, refreshState, s
     setFavoriteStatus(!favoriteStatus);
   }
 
-  // If the default ‘Select Size’ is currently selected: Clicking this button should open the size dropdown, and a message should appear above the dropdown stating “Please select size”.
   const handleAddToBag = () => {
     if (sizeSeletedStatus && outOfStockStatus === false && qtySeletedStatus) {
       for (let i = 0; i < selectedQty; i++) {

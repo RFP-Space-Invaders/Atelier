@@ -2,7 +2,6 @@ import React, { useState, useEffect, createContext, useContext } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-// import Header from './ProductComponents/Header.jsx';
 import ProductDescription from './ProductComponents/ProductDescription.jsx';
 import StyleSelector from './ProductComponents/StyleSelector.jsx';
 import styled from 'styled-components';
@@ -13,7 +12,6 @@ import { IDContext } from '../../IDContext.jsx';
 export const ThemeContext = React.createContext({});
 
 export default function ProductMain() {
-  // const [productId, setProductId] = useState(40346);
   const [productDetails, setProductDetails] = useState({});
   const [productName, setProductName] = useState('Placeholder Name');
   const [categoryName, setCategoryName] = useState('CATEGORY');
@@ -29,7 +27,6 @@ export default function ProductMain() {
       url: `/products/${product_id}`,
     })
       .then((response) => {
-        // console.log(response.data.name);
         ReactDOM.unstable_batchedUpdates(() => {
           setProductDetails(response.data)
           setProductName(response.data.name);
@@ -44,15 +41,9 @@ export default function ProductMain() {
       });
   }
 
-  // when first load page, do axios call
   useEffect(() => {
-    console.log('productMain')
     getDataFromProductId(product_id);
   }, [product_id]);
-
-  // useEffect(() => {
-  //   setName(productName);
-  // }, [productName]);
 
   if (isLoading) {
     return null;
@@ -60,15 +51,8 @@ export default function ProductMain() {
 
   return (
     <ProductOverviewGrid>
-      {/* <HeaderGrid>
-      </HeaderGrid> */}
-      {/* StyleSelector contains style and carousel */}
       <StyleSelector productName={productName} categoryName={categoryName} priceTag={priceTag} product_id={product_id}/>
-      {/* productinformation contains information, slogan and descirption */}
       <ProductInformationGrid>
-        {/* <ProductInformation /> */}
-        {/* {productCategory}
-        {productName} */}
         <ProductDescription slogan={!isLoading ? productDetails.slogan : null} description={!isLoading ? productDetails.description : null} />
         <VerticalLine>
           <div></div>
