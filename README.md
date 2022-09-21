@@ -55,15 +55,13 @@ A responsive web and mobile-friendly React e-commerce application that interacts
 ## Components
 ### Product Detail
 >A general information relating to the product general and expanded carousel view of product images style selector add to cart and favorite item item rating and link to review section.
-<img src="./gifs/product.gif" alt="" width=80% height=auto>
+<!-- <img src="./gifs/product.gif" alt="" width=80% height=auto> -->
 
 ### Questions and Answers
 >A dynamic list of questions and answers upload images through Cloudinary add questions/answers report questions/answers.
 
-
 ### Rating and Reviews
 >A dynamic list of current ratings and reviews along with characteristic ratings. The section also features a rating breakdown and the ability to add additional reviews.
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
