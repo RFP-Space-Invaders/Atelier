@@ -50,8 +50,6 @@ A responsive web and mobile-friendly React e-commerce application that interacts
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Components
-
 ## Components
 ### Product Detail
 >A general information relating to the product general and expanded carousel view of product images style selector add to cart and favorite item item rating and link to review section.
