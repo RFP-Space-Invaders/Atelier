@@ -4,8 +4,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Gameplay](https://i.imgur.com/zKfnLUM.gif)
-
 A responsive web and mobile-friendly React e-commerce application that interacts with an API.
 
 <!-- MORE about what problems we solved here!!!! -->
@@ -26,9 +24,7 @@ A responsive web and mobile-friendly React e-commerce application that interacts
 * ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 * ![Jest](https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white)
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -37,7 +33,7 @@ A responsive web and mobile-friendly React e-commerce application that interacts
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/ph-castle/apples2oranges.git
+   git clone https://github.com/SpaceDesigns/Atelier.git
    ```
 2. Install NPM packages
    ```sh
